@@ -12,7 +12,7 @@ const Controller=()=>{
         id:0,
         user:"monojitwithu",
         projectStatus:0,
-        assignedProject:""
+        assignedProject:"Login Form"
 
 
 
@@ -67,7 +67,7 @@ const Controller=()=>{
     }])
      
 
-    const setProjectStatus=(Id)=>{
+    const setProjectClickHandler=(Id)=>{
        
 
          const user=devolperData.find((user)=>user.user===Id)
@@ -89,7 +89,7 @@ const Controller=()=>{
         
     }
 
-    const endProject=(userId)=>{
+    const endProjectClickHandler=(userId)=>{
         const user=devolperData.find((user)=>user.user===userId)
         const positionOfTheUser=user.id
 
@@ -106,7 +106,7 @@ const Controller=()=>{
             <Switch>
                 <Route exact  path="/" render={()=><LoginPage/>}/>
                 <Route exact path="/admin" render={()=><AdminPortal/>}/>
-                <Route exact path="/devoloper/:userId" render={()=><DevoloperPortal devolperData={devolperData} setProjectStatus={setProjectStatus} endProject={endProject}/>}/>
+                <Route exact path="/devoloper/:userId" render={()=><DevoloperPortal devolperData={devolperData} setProjectClickHandler={setProjectClickHandler} endProjectClickHandler={endProjectClickHandler}/>}/>
                 <Route exact path="/manager" render={()=><ManagerPortal/>}/>
             </Switch>
         </Router>

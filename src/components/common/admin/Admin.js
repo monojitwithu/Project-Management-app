@@ -4,19 +4,34 @@ import { useHistory } from "react-router-dom"
  
 const Admin=({heading,user})=>{
     const devolperData=[{
-        id:"user1",
-        password:12345678,
-        projectStatus:0,
-        assignedProject:""
+        id:"monojitwithu",
+        password:"12345678",
+        },
+        {
+            id:"punit250",
+            password:"12345678",
+            },
+            {
+                id:"hello908",
+                password:"wolf765",
+                },{
+                    id:"priyanka332",
+                    password:"12345678",
+                    },{
+                        id:"sawan908",
+                        password:"12345678",
+                        },{
+                            id:"monojitwithu",
+                            password:"12345678",
+                            },
 
-
-
-    }]
+    ]
 
     const history=useHistory();
     
 
-    const[inputData,setInputData]=useState({id:"",password:""})
+    const[inputData,setInputData]=useState({id:"",password:""}) //setting the input data getting from the form for
+
     const passwords={id:"monojitwithu",password:"12345678"}
     //  if(user==="ADMIN"){
     //   passwords={id:"monojitwithu",password:"12345678"}
@@ -50,21 +65,28 @@ const Admin=({heading,user})=>{
         }
 
         
-        if(inputData.id===passwords.id && inputData.password===passwords.password){
+        
 
-            window.alert(`${user} Login SuccessFul`)
+            
             if(user==="ADMIN"){
                 history.push("/admin")
             }else if(user==="DEVOLOPER"){
-                history.push(`/devoloper/${inputData.id}`)
+
+                devolperData.forEach((item)=>{
+                    if(item.id===inputData.id&& item.password===inputData.password){
+                        window.alert("success")
+                        history.push(`/devoloper/${inputData.id}`)
+                        
+                    }
+
+                })
+                
+                
             }else if(user==="MANAGER"){
                 history.push("/manager")
             }
             setInputData({...inputData,id:"",password:""})
-        }else{
-            window.alert("Wrong Password")
-            setInputData({...inputData,id:"",password:""})
-        }
+        
         
 
 

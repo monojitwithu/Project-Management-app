@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Switch, useParams } from "react-router-dom"
 
 
-const DevoloperPortal=({devolperData,setProjectStatus,endProject})=>{
+const DevoloperPortal=({devolperData,endProjectClickHandler,setProjectClickHandler})=>{
     const {userId}=useParams()
     const [name,setName]=useState("")
     const[projectSatuss,setProjectStatuss]=useState("")
@@ -37,6 +37,7 @@ const DevoloperPortal=({devolperData,setProjectStatus,endProject})=>{
 
     }
     setName(user.user)
+    setProject(user.assignedProject)
     
 
    }
@@ -51,10 +52,12 @@ const DevoloperPortal=({devolperData,setProjectStatus,endProject})=>{
         <div>
             <h1>Welcome to Devoloper Portal</h1>
             <h1>Welcome Back {name}</h1>
+            <h1>Project Information  {project}</h1>
             <h2>Project Status</h2>
             <h3>{projectSatuss}</h3>
-            <button onClick={()=>setProjectStatus(userId)}>Start Project</button>
-            <button onClick={()=>endProject(userId)}>End Project</button>
+            
+            <button onClick={()=>setProjectClickHandler(userId)}>Start Project</button>
+            <button onClick={()=>endProjectClickHandler(userId)}>End Project</button>
 
 
             
