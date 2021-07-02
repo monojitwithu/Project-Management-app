@@ -26,13 +26,15 @@ const Admin=({heading,user})=>{
                             },
 
     ]
+    const adminData={id:"admin",password:"admin"}
+    const managerData={id:"manager",password:"manager"}
 
     const history=useHistory();
     
 
     const[inputData,setInputData]=useState({id:"",password:""}) //setting the input data getting from the form for
 
-    const passwords={id:"monojitwithu",password:"12345678"}
+    
     //  if(user==="ADMIN"){
     //   passwords={id:"monojitwithu",password:"12345678"}
     //   else if(user==="MANAGER"){
@@ -69,7 +71,16 @@ const Admin=({heading,user})=>{
 
             
             if(user==="ADMIN"){
-                history.push("/admin")
+                if(adminData.id===inputData.id&& adminData.password===inputData.password){
+                    window.alert("success")
+                    history.push("/admin")
+                    
+                }else{
+                    window.alert("Try Again")
+                }
+                
+
+                
             }else if(user==="DEVOLOPER"){
 
                 devolperData.forEach((item)=>{
@@ -83,7 +94,13 @@ const Admin=({heading,user})=>{
                 
                 
             }else if(user==="MANAGER"){
-                history.push("/manager")
+                if(managerData.id===inputData.id&& managerData.password===inputData.password){
+                    window.alert("success")
+                    history.push("/manager")
+                    
+                }else{
+                    window.alert("Try Again")
+                }
             }
             setInputData({...inputData,id:"",password:""})
         
@@ -98,7 +115,7 @@ const Admin=({heading,user})=>{
    
 
     return(
-        <div>
+        <div className="login-form">
             <h2>{heading}</h2>
             <input type="text" placeholder="Enter User Name" onChange={inputHandler} name="userName" value={inputData.id}/>
             <input type="password" placeholder="Enter User Password" name="password" onChange={inputHandler} value={inputData.password}/>

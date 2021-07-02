@@ -24,12 +24,12 @@ const DevoloperPortal=({devolperData,endProjectClickHandler,setProjectClickHandl
 
 
     switch(pojectStatus){
-        case 0: setProjectStatuss( "Project Not Started")
+        case 0: setProjectStatuss( "Not Started")
         break;
         
-        case 1:  setProjectStatuss("Project Has been Started")
+        case 1:  setProjectStatuss(" Started")
         break;
-         case 3:  setProjectStatuss("Project Ended")
+         case 3:  setProjectStatuss(" Ended")
          break;
 
 
@@ -49,18 +49,20 @@ const DevoloperPortal=({devolperData,endProjectClickHandler,setProjectClickHandl
 
 
     return(
-        <div>
+        <div className="dev-container">
+        <div className="devoloper-card">
             <h1>Welcome to Devoloper Portal</h1>
             <h1>Welcome Back {name}</h1>
-            <h1>Project Information  {project}</h1>
-            <h2>Project Status</h2>
-            <h3>{projectSatuss}</h3>
+            <h1>Project : {project}</h1>
+            <h2> Project Status : <h3>{projectSatuss}</h3></h2>
+            
             
             <button onClick={()=>setProjectClickHandler(userId)}>Start Project</button>
             <button onClick={()=>endProjectClickHandler(userId)}>End Project</button>
 
 
             
+        </div>
         </div>
     )
     }

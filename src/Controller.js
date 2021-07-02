@@ -4,7 +4,8 @@ import { BrowserRouter as Router,Route,Switch } from "react-router-dom";
 import LoginPage from "./components/login/LoginPage";
 import AdminPortal from "./components/portal/adminPortal/AdminPortal";
 import DevoloperPortal from "./components/portal/devoloperPortal/DevoloperPortal";
-import ManagerPortal from "./components/portal/managerPortal/ManagerPortal";
+import ManagerPortal from './components/portal/managerPortal/ManagerPortal'
+
 
 
 const Controller=()=>{
@@ -102,12 +103,13 @@ const Controller=()=>{
     return(
         <>
         <Router>
+        <LoginPage/>
 
             <Switch>
-                <Route exact  path="/" render={()=><LoginPage/>}/>
-                <Route exact path="/admin" render={()=><AdminPortal/>}/>
+                
+                <Route exact path="/admin" render={()=><AdminPortal devolperData={devolperData} setProjectClickHandler={setProjectClickHandler} endProjectClickHandler={endProjectClickHandler}/>}/>
                 <Route exact path="/devoloper/:userId" render={()=><DevoloperPortal devolperData={devolperData} setProjectClickHandler={setProjectClickHandler} endProjectClickHandler={endProjectClickHandler}/>}/>
-                <Route exact path="/manager" render={()=><ManagerPortal/>}/>
+                <Route exact path="/manager" render={()=><ManagerPortal devolperData={devolperData} setProjectClickHandler={setProjectClickHandler} endProjectClickHandler={endProjectClickHandler}/>}/>
             </Switch>
         </Router>
 

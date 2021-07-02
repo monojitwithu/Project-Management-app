@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import Admin from "../common/admin/Admin"
-import Devoloper from "../common/devoloper/Devoloper"
-import Manager from "../common/manager/Manager"
+
 
 
 const Login=()=>{
@@ -36,25 +35,27 @@ const Login=()=>{
     
     
     return(
-        <div>
-            this is Login Page
-
-            <div className="admin">
+        <>
+        <div className="login-page">
+            
+               <div className="login-option">
+            
                 <label>Login As Admin</label>
                 <button onClick={clickHandler} name="ADMIN">Login</button>
 
-            </div>
-            <div className="Manager">
+            
+            
                 <label>Login As Manager</label>
                 <button onClick={clickHandler}  name="MANAGER">Login</button>
 
-            </div>
+            
 
-            <div className="Devoloper">
+            
                 <label>Login As Devoloper</label>
                 <button onClick={clickHandler} name="DEVOLOPER">Login</button>
 
-            </div>
+                </div>
+                </div>
 
             {user==="ADMIN"&&(
                 <Admin heading="Admin Login" user={user}/>
@@ -65,12 +66,13 @@ const Login=()=>{
             {user==="MANAGER"&&(
                 <Admin heading="Manager Login" user={user}/>
             )}
-
-
-
-
             
-        </div>
+
+
+
+</>
+            
+       
     )
 }
 
