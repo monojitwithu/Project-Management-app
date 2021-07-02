@@ -19,7 +19,9 @@ const [devdata,setDevData]=useState(devolperData)
             <h1> {element.user}</h1>
             <h1>Project : {element.assignedProject}</h1>
             <h2>Project Status:</h2>
-            <h3></h3>
+            <h3>{element.projectStatus===1?" Started":"Ended" }</h3>
+            <input placeholder="Assign Task"/>
+            <button>Assign Task</button>
             
             <button onClick={()=>setProjectClickHandler(element.user)}>Start Project</button>
             <button onClick={()=>endProjectClickHandler(element.user)}>End Project</button>

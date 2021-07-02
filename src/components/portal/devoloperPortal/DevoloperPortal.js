@@ -55,8 +55,6 @@ const DevoloperPortal=({devolperData,endProjectClickHandler,setProjectClickHandl
             <h1>Welcome Back {name}</h1>
             <h1>Project : {project}</h1>
             <h2> Project Status : <h3>{projectSatuss}</h3></h2>
-            
-            
             <button onClick={()=>setProjectClickHandler(userId)}>Start Project</button>
             <button onClick={()=>endProjectClickHandler(userId)}>End Project</button>
 
