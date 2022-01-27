@@ -1,14 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Main from "./Main.scss"
+import React from "react";
+import ReactDOM from "react-dom";
+import Main from "./Main.scss";
 
+import Controller from "./Controller";
 
-import Controller from './Controller'
-
-ReactDOM.render(
- <Controller/>,
-  document.getElementById('root')
-);
+ReactDOM.render(<Controller />, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -1,21 +1,20 @@
-.login-form{
-    display: flex;
-    flex-direction: column;
-    height: 100px;
-    align-items: center;
-    position: absolute;
-    right: 10px
+.login-form {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  align-items: center;
+  position: absolute;
+  right: 10px;
 }
-input{
-    margin: 5px;
-    font-size: 17px;
-    width: 400px;
-    padding: 10px;
+input {
+  margin: 5px;
+  font-size: 17px;
+  width: 400px;
+  padding: 10px;
 }
-button{
-    margin: 7px;
-    background:#39A2DB;
-    border: none;
-    padding: 10px 40px;
-    
+button {
+  margin: 7px;
+  background: #39a2db;
+  border: none;
+  padding: 10px 40px;
 }

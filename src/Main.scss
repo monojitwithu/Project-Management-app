@@ -1,13 +1,11 @@
-@import './components/login/login';
-@import './components/common/admin/loginform';
-@import './components/portal/devoloperPortal/devoloper';
-@import './components/portal/adminPortal/adminPortal';
+@import "./components/login/login";
+@import "./components/common/admin/loginform";
+@import "./components/portal/devoloperPortal/devoloper";
+@import "./components/portal/adminPortal/adminPortal";
 
-body{
-    margin: 0;
-    background: #E8F0F2;
-    font-family: fantasy;
-    letter-spacing: 2px;
-    
-
+body {
+  margin: 0;
+  background: #e8f0f2;
+  font-family: fantasy;
+  letter-spacing: 2px;
 }
